@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+.mov{
+  background-color: #e1e2e2;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.movie{
+  
+  margin: 20px 0 20px 0 ;
+}
+.image{
+  width: 290 px ;
+   height: 400px;
+}
+.me-2{
+  margin-left: 500px;
+}

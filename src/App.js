@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { Movies } from "./Components/Data";
+import MovieList from "./Components/MovieList";
+import Navibar from "./Components/Navibar";
 
 function App() {
+  const [list, setList] = useState(Movies);
+  const [recheche, setRecheche] = useState("");
+  const [value, setValue] = React.useState(null);
+
+  const handelChange = (e) => {
+    setRecheche(e.target.value);
+  };
+  const handelRating = (event, newValue) => {
+    setValue(newValue);
+  };
+  console.log(value);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navibar
+        recheche={recheche}
+        handelChange={handelChange}
+        value={value}
+        handelRating={handelRating}
+      />
+      <MovieList
+        omar={list.filter((el) =>
+            el.title.toUpperCase().includes(recheche.toUpperCase())
+            &&
+            value===null?el:el.rating === value
+        )}
+      />
     </div>
   );
 }
