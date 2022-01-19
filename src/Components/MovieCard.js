@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ ahmed }) => {
   return (
@@ -20,7 +21,7 @@ const MovieCard = ({ ahmed }) => {
               <Rating name="read-only" value={ahmed.rating} readOnly />
             </Box>
           </div>
-          <Button variant="primary">Details</Button> 
+          <Link to ={`/details/${ahmed.id}`}>               <Button variant="primary">details</Button>              </Link>  
         </Card.Body>
       </Card>
     </div>

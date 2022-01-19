@@ -1,6 +1,7 @@
 import { Rating } from '@mui/material';
 import React from 'react'
 import { Container, FormControl, Nav, Navbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 const Navibar = ({handelChange,recheche,value,handelRating}) => {
     return (
@@ -8,9 +9,7 @@ const Navibar = ({handelChange,recheche,value,handelRating}) => {
     <Navbar bg="light" expand="lg">
     <Container>
     <Navbar.Brand href="">Moviezland</Navbar.Brand>
-    <Nav.Link >Home</Nav.Link>
-    <Nav.Link >About</Nav.Link>
-    <Nav.Link >Login</Nav.Link>
+    <Nav.Link  as={Link} to='/' >Home</Nav.Link  >
     <Nav className="me-auto">
       <FormControl 
           type="search"
@@ -26,7 +25,6 @@ const Navibar = ({handelChange,recheche,value,handelRating}) => {
         value={value}
         onChange={handelRating}
       />
-    
     
     </Nav>
     </Container>
